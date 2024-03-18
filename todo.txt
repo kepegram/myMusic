@@ -1,0 +1,23 @@
+TODO
+
+Profile Page:
+
+    find new icons to use for music controller and also back/settings buttons on profile screen
+
+    fetch from music api and allow user music playback
+
+    add login logic to login screen (input user info in async storage and display on profile)
+
+    Add ability to toggle to dark mode
+
+    research more UI library's to make app look nicer (i.e. UI Kitten)
+
+    embed all images used within project file structure
+
+    create a custom button to use throughout the app for continuity
+
+    useful videos:
+    https://www.youtube.com/watch?v=QMUii9fSKfQ
+
+
+    
