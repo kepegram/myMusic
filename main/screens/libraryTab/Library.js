@@ -41,10 +41,10 @@ const Library = () => {
   return (
     <SafeAreaView style={libraryUI.container}>
       <View style={libraryUI.headerContainer}>
-        <Text style={libraryUI.title}>Library</Text>
+        <Text style={libraryUI.title}>library</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
           <ImageBackground
-            source={{uri: 'https://i.stack.imgur.com/l60Hf.png'}}
+            source={require('../../../assets/default-imgs/default-pfp.png')}
             style={libraryUI.userAvatarSize}
             imageStyle={libraryUI.userAvatar}
           />
@@ -52,8 +52,8 @@ const Library = () => {
       </View>
       <TextInput
         style={libraryUI.searchInput}
-        placeholder="Search for songs here..."
-        placeholderTextColor="black"
+        placeholder="search for songs here..."
+        placeholderTextColor="#A9A9A9"
         value={searchQuery}
         onChangeText={setSearchQuery}
       />

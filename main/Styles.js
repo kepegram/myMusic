@@ -23,6 +23,304 @@ export const styles = StyleSheet.create({
   },
 });
 
+export const welcomeScreenUI = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    flex: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 24,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  desc: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 30,
+    color: '#C73EFF',
+    fontWeight: 'bold',
+  },
+  buttonsContainer: {
+    alignItems: 'center',
+  },
+  button: {
+    width: '80%',
+    height: 50,
+    borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  login: {
+    backgroundColor: '#C73EFF',
+  },
+  newUserContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 30,
+  },
+  newText: {
+    fontSize: 14,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  createText: {
+    color: '#C73EFF',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+});
+
+export const createAccountUI = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  backButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 15,
+  },
+  form: {
+    width: '80%',
+    paddingTop: 50,
+    marginBottom: 200,
+  },
+  label: {
+    marginBottom: 5,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  input: {
+    borderBottomColor: '#F5FCFF',
+    backgroundColor: 'white',
+    borderRadius: 30,
+    borderBottomWidth: 1,
+    width: 280,
+    height: 45,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    shadowColor: '#808080',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    padding: 10,
+    fontSize: 15,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: '#C73EFF',
+    borderRadius: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+});
+
+export const loginScreenUI = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerText: {
+    paddingBottom: 10,
+    paddingRight: 222,
+    fontSize: 26,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  inputContainer: {
+    borderBottomColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 30,
+    borderBottomWidth: 1,
+    width: 300,
+    height: 45,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    shadowColor: '#808080',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  inputs: {
+    height: 45,
+    marginLeft: 16,
+    borderBottomColor: '#FFFFFF',
+    flex: 1,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  inputIcon: {
+    width: 30,
+    height: 30,
+    marginRight: 15,
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    height: 45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    width: 300,
+    borderRadius: 30,
+    backgroundColor: 'transparent',
+  },
+  loginButton: {
+    backgroundColor: '#C73EFF',
+    shadowColor: '#808080',
+    shadowOffset: {
+      width: 0,
+      height: 9,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 12.35,
+    elevation: 19,
+  },
+  loginText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+});
+
+export const libraryUI = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+    paddingTop: 10,
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  listContainer: {
+    paddingHorizontal: 5,
+  },
+  title: {
+    fontSize: 30,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  userAvatarSize: {
+    width: 35,
+    height: 35,
+  },
+  userAvatar: {
+    borderRadius: 25,
+  },
+  searchInput: {
+    height: 40,
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: '#A9A9A9',
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  card: {
+    flex: 1,
+    marginBottom: 10,
+    padding: 5,
+    borderRadius: 0,
+    marginHorizontal: -8,
+  },
+  cardTitle: {
+    fontSize: 18,
+    paddingLeft: 10,
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  cardArtists: {
+    flexDirection: 'row',
+  },
+  cardArtistName: {
+    color: '#888',
+    fontSize: 12,
+    paddingLeft: 10,
+    fontWeight: 'bold',
+  },
+  cardContent: {
+    height: 160,
+    justifyContent: 'center',
+  },
+  albumCoversContainer: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+    paddingTop: 20,
+    paddingBottom: 10,
+  },
+  albumCovers: {
+    paddingBottom: 10,
+    height: 150,
+    width: 150,
+  },
+});
+
+export const musicPlayerUI = StyleSheet.create({
+  container: {
+    justifyContent: 'space-between',
+    height: Dimensions.get('window').height,
+    alignItems: 'center',
+    maxHeight: 500,
+  },
+  imageContainer: {
+    flexDirection: 'column',
+    width: Dimensions.get('window').width,
+    alignItems: 'center',
+    paddingTop: 70,
+  },
+  albumCover: {
+    width: 320,
+    height: 320,
+    borderRadius: 10,
+  },
+  songTitle: {
+    fontSize: 20,
+    textAlign: 'center',
+    // textTransform: 'capitalize',
+    color: 'black',
+    fontWeight: 'bold',
+  },
+  songArtist: {
+    fontSize: 16,
+    textAlign: 'center',
+    // textTransform: 'capitalize',
+    color: 'black',
+    fontWeight: 'bold',
+  },
+});
+
 export const profileUI = StyleSheet.create({
   container: {
     flex: 1,
@@ -61,6 +359,7 @@ export const profileUI = StyleSheet.create({
     fontSize: 20,
     textDecorationLine: 'underline',
     color: 'black',
+    fontWeight: 'bold',
   },
   statsContainer: {
     flexDirection: 'row',
@@ -74,11 +373,13 @@ export const profileUI = StyleSheet.create({
   statCount: {
     fontSize: 20,
     color: 'black',
+    fontWeight: 'bold',
   },
   statLabel: {
     fontSize: 16,
     color: '#999',
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   section: {
     paddingHorizontal: 16,
@@ -93,6 +394,7 @@ export const profileUI = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     color: 'black',
+    fontWeight: 'bold',
   },
   seeAllButton: {
     backgroundColor: '#A9A9A9',
@@ -103,6 +405,7 @@ export const profileUI = StyleSheet.create({
   },
   seeAllButtonText: {
     color: '#eee',
+    fontWeight: 'bold',
   },
   sectionBody: {
     marginTop: 10,
@@ -141,278 +444,6 @@ export const profileUI = StyleSheet.create({
   logOutText: {
     textDecorationLine: 'underline',
     color: 'gray',
-  },
-});
-
-export const welcomeScreenUI = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  content: {
-    flex: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    color: 'black',
-  },
-  desc: {
-    fontSize: 18,
-    textAlign: 'center',
-    marginTop: 30,
-    color: 'black',
-  },
-  buttonsContainer: {
-    alignItems: 'center',
-  },
-  button: {
-    width: '80%',
-    height: 50,
-    borderRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: 'white',
-  },
-  login: {
-    backgroundColor: '#C73EFF',
-  },
-  newUserContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 30,
-  },
-  newText: {
-    fontSize: 14,
-    color: 'black',
-  },
-  createText: {
-    color: '#C73EFF',
-    fontSize: 14,
-  },
-});
-
-export const createAccountUI = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  form: {
-    width: '80%',
-  },
-  label: {
-    marginBottom: 5,
-    color: 'black',
-  },
-  input: {
-    borderBottomColor: '#F5FCFF',
-    backgroundColor: 'white',
-    borderRadius: 30,
-    borderBottomWidth: 1,
-    width: 280,
-    height: 45,
-    marginBottom: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    shadowColor: '#808080',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-    padding: 10,
-    fontSize: 15,
-    color: 'black',
-  },
-  button: {
-    marginTop: 20,
-    backgroundColor: '#C73EFF',
-    borderRadius: 30,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    textAlign: 'center',
-  },
-});
-
-export const loginScreenUI = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerText: {
-    paddingBottom: 10,
-    paddingRight: 210,
-    fontSize: 26,
-    color: 'black',
-  },
-  inputContainer: {
-    borderBottomColor: '#F5FCFF',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 30,
-    borderBottomWidth: 1,
-    width: 300,
-    height: 45,
-    marginBottom: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    shadowColor: '#808080',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  inputs: {
-    height: 45,
-    marginLeft: 16,
-    borderBottomColor: '#FFFFFF',
-    flex: 1,
-    color: 'black',
-  },
-  inputIcon: {
-    width: 30,
-    height: 30,
-    marginRight: 15,
-    justifyContent: 'center',
-  },
-  buttonContainer: {
-    height: 45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    width: 300,
-    borderRadius: 30,
-    backgroundColor: 'transparent',
-  },
-  loginButton: {
-    backgroundColor: '#C73EFF',
-    shadowColor: '#808080',
-    shadowOffset: {
-      width: 0,
-      height: 9,
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 12.35,
-    elevation: 19,
-  },
-  loginText: {
-    color: 'white',
-  },
-  btnText: {
-    color: 'white',
-  },
-});
-
-export const libraryUI = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-    paddingTop: 10,
-  },
-  headerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-  listContainer: {
-    paddingHorizontal: 5,
-  },
-  title: {
-    fontSize: 30,
-    color: 'black',
-  },
-  userAvatarSize: {
-    width: 35,
-    height: 35,
-  },
-  userAvatar: {
-    borderRadius: 25,
-  },
-  searchInput: {
-    height: 40,
-    borderWidth: 2,
-    borderRadius: 5,
-    borderColor: '#A9A9A9',
-    marginBottom: 10,
-    paddingHorizontal: 10,
-    color: 'black',
-  },
-  card: {
-    flex: 1,
-    marginBottom: 10,
-    padding: 5,
-    borderRadius: 0,
-    marginHorizontal: -8,
-  },
-  cardTitle: {
-    fontSize: 18,
-    paddingLeft: 10,
-    color: 'black',
-  },
-  cardArtists: {
-    flexDirection: 'row',
-  },
-  cardArtistName: {
-    color: '#888',
-    fontSize: 12,
-    paddingLeft: 10,
-  },
-  cardContent: {
-    height: 160,
-    justifyContent: 'center',
-  },
-  albumCoversContainer: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    paddingHorizontal: 10,
-    paddingTop: 20,
-    paddingBottom: 10,
-  },
-  albumCovers: {
-    paddingBottom: 10,
-    height: 150,
-    width: 150,
-  },
-});
-
-export const musicPlayerUI = StyleSheet.create({
-  container: {
-    justifyContent: 'space-between',
-    height: Dimensions.get('window').height,
-    maxHeight: 500,
-  },
-  imageContainer: {
-    width: Dimensions.get('window').width,
-    alignItems: 'center',
-    paddingTop: 150,
-  },
-  albumCover: {
-    width: 320,
-    height: 320,
-  },
-  songTitle: {
-    fontSize: 20,
-    textAlign: 'center',
-    textTransform: 'capitalize',
-    color: 'black',
-  },
-  songArtist: {
-    fontSize: 16,
-    textAlign: 'center',
-    textTransform: 'capitalize',
-    color: 'black',
+    fontWeight: 'bold',
   },
 });

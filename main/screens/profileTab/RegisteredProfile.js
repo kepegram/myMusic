@@ -11,6 +11,7 @@ import React, {useState, useContext} from 'react';
 import {profileUI} from '../../Styles';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext} from '../../context/AuthContext';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const RegisteredProfile = () => {
   const {logout} = useContext(AuthContext);
@@ -18,7 +19,7 @@ const RegisteredProfile = () => {
   const [name, setName] = useState('');
 
   const user = {
-    avatar: 'https://i.stack.imgur.com/l60Hf.png',
+    avatar: require('../../../assets/default-imgs/default-pfp.png'),
     coverPhoto:
       'https://trusteid.mioa.gov.mk/wp-content/plugins/uix-page-builder/uixpb_templates/images/UixPageBuilderTmpl/default-cover-2.jpg',
   };
@@ -27,15 +28,18 @@ const RegisteredProfile = () => {
     <ScrollView style={profileUI.container}>
       <Image source={{uri: user.coverPhoto}} style={profileUI.coverPhoto} />
       <View style={profileUI.backButtonContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Library')} />
+        <TouchableOpacity onPress={() => navigation.navigate('Library')}>
+          <Icon name="arrow-back" size={30} color="white" />
+        </TouchableOpacity>
         <TouchableOpacity
-          style={{paddingLeft: 285, paddingTop: 2}}
-          onPress={() => navigation.navigate('Settings')}
-        />
+          style={{paddingLeft: 295, paddingTop: 2}}
+          onPress={() => navigation.navigate('Settings')}>
+          <Icon name="settings" size={30} color="white" />
+        </TouchableOpacity>
       </View>
       <View style={profileUI.avatarContainer}>
         <TouchableOpacity onPress={() => {}}>
-          <Image source={{uri: user.avatar}} style={profileUI.avatar} />
+          <Image source={user.avatar} style={profileUI.avatar} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}}>
           <Text style={profileUI.name}>@{name}</Text>
@@ -47,21 +51,21 @@ const RegisteredProfile = () => {
           <TouchableOpacity onPress={() => {}}>
             <Text style={profileUI.statCount}>0</Text>
           </TouchableOpacity>
-          <Text style={profileUI.statLabel}>Total Songs</Text>
+          <Text style={profileUI.statLabel}>total songs</Text>
         </View>
         <View style={profileUI.statContainer}>
           <TouchableOpacity onPress={() => {}}>
             <Text style={profileUI.statCount}>0</Text>
           </TouchableOpacity>
-          <Text style={profileUI.statLabel}>Hours{'\n'}Listened</Text>
+          <Text style={profileUI.statLabel}>hours{'\n'}listened</Text>
         </View>
       </View>
 
       <View style={profileUI.section}>
         <View style={profileUI.sectionHeader}>
-          <Text style={profileUI.sectionTitle}>Your Songs:</Text>
+          <Text style={profileUI.sectionTitle}>your songs:</Text>
           <TouchableOpacity style={profileUI.seeAllButton} onPress={() => {}}>
-            <Text style={profileUI.seeAllButtonText}>See all</Text>
+            <Text style={profileUI.seeAllButtonText}>see all</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -69,21 +73,21 @@ const RegisteredProfile = () => {
       <View style={profileUI.logOutContainer}>
         <TouchableOpacity
           onPress={() =>
-            Alert.alert('Logout', 'Are you sure you wish to logout?', [
+            Alert.alert('logout', 'are you sure you wish to logout?', [
               {
-                text: 'Cancel',
+                text: 'cancel',
                 onPress: () => {},
                 style: 'cancel',
               },
               {
-                text: 'Logout',
+                text: 'logout',
                 onPress: () => {
                   logout();
                 },
               },
             ])
           }>
-          <Text style={profileUI.logOutText}>Logout</Text>
+          <Text style={profileUI.logOutText}>logout</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
