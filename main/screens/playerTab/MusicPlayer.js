@@ -11,15 +11,17 @@ import {
   Animated,
   Dimensions,
   TouchableOpacity,
+  Appearance,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import Songs from '../libraryTab/Songs';
-import {musicPlayerUI} from '../../Styles';
+import {musicPlayerUI} from '../../styles/Styles';
 import Controller from './Controller';
 import TrackPlayer, {Event} from 'react-native-track-player';
 import SliderComp from './SliderComp';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
+import { dmPlayerUI } from '../../styles/DarkMode';
 
 const {width} = Dimensions.get('window');
 
@@ -30,6 +32,12 @@ const MusicPlayer = () => {
   const isPlayerReady = useRef(false);
   const slider = useRef(null);
   const index = useRef(0);
+
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
+
+  Appearance.addChangeListener(scheme => {
+    setTheme(scheme.colorScheme);
+  });
 
   useEffect(() => {
     scrollX.addListener(({value}) => {
@@ -85,9 +93,9 @@ const MusicPlayer = () => {
   };
 
   return (
-    <View style={musicPlayerUI.container}>
+    <View style={theme === 'light' ? musicPlayerUI.container : dmPlayerUI.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Library')}>
-        <Icon style={{paddingTop: 5, paddingRight: 320}} color={'black'} name={'arrow-back'} size={35} />
+        <Icon style={{paddingTop: 5, paddingRight: 320}} color={theme === 'light' ? '#313131' : 'white'} name={'arrow-back'} size={35} />
       </TouchableOpacity>
       <SafeAreaView style={{height: 410}}>
         <FlatList
@@ -106,7 +114,7 @@ const MusicPlayer = () => {
         />
       </SafeAreaView>
       <View>
-        <Text style={musicPlayerUI.songTitle}>{Songs[songIndex].title}</Text>
+        <Text style={theme === 'light' ? musicPlayerUI.songTitle : dmPlayerUI.songTitle}>{Songs[songIndex].title}</Text>
         <Text style={musicPlayerUI.songArtist}>{Songs[songIndex].artist}</Text>
       </View>
       <SliderComp />

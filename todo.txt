@@ -1,7 +1,5 @@
 TODO:
 
-Profile Page:
-
     add ability to toggle to dark mode in settings screen
     
     allow for song to be directly picked from library and played in the music player (maybe using a flat list)
@@ -10,15 +8,13 @@ Profile Page:
 
     add volume controller
 
-    add bottom player when returning to library screen
+    add bottom music player when returning to library screen
 
-    add login logic to login screen (input user info in async storage and display on profile)
+    add login logic (input user info in async storage and display on profile)
 
     research more UI library's to make app look nicer (i.e. UI Kitten)
 
     embed all images used within project file structure
-
-    create a custom button to use throughout the app for continuity
 
     useful videos:
     https://www.youtube.com/watch?v=QMUii9fSKfQ

@@ -8,14 +8,22 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  Appearance,
 } from 'react-native';
-import {libraryUI} from '../../Styles';
+import {libraryUI} from '../../styles/Styles';
 import {useNavigation} from '@react-navigation/native';
 import Songs from './Songs';
+import {dmLibraryUI} from '../../styles/DarkMode';
 
 const Library = () => {
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState('');
+
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
+
+  Appearance.addChangeListener(scheme => {
+    setTheme(scheme.colorScheme);
+  });
 
   const renderAppointmentCard = ({item}) => (
     <TouchableOpacity onPress={() => navigation.navigate('Music Player')}>
@@ -25,7 +33,12 @@ const Library = () => {
             <Image source={item.image} style={libraryUI.albumCovers} />
           </View>
         </View>
-        <Text style={libraryUI.cardTitle}>{item.title}</Text>
+        <Text
+          style={
+            theme === 'light' ? libraryUI.cardTitle : dmLibraryUI.cardTitle
+          }>
+          {item.title}
+        </Text>
         <View style={libraryUI.cardArtists}>
           <Text style={libraryUI.cardArtistName}>{item.artist}</Text>
         </View>
@@ -39,9 +52,12 @@ const Library = () => {
   };
 
   return (
-    <SafeAreaView style={libraryUI.container}>
+    <SafeAreaView
+      style={theme === 'light' ? libraryUI.container : dmLibraryUI.container}>
       <View style={libraryUI.headerContainer}>
-        <Text style={libraryUI.title}>library</Text>
+        <Text style={theme === 'light' ? libraryUI.title : dmLibraryUI.title}>
+          library
+        </Text>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
           <ImageBackground
             source={require('../../../assets/default-imgs/default-pfp.png')}

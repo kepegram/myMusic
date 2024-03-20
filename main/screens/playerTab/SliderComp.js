@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
-import {StyleSheet, View, Text} from 'react-native';
-import React from 'react';
+import {StyleSheet, View, Text, Appearance} from 'react-native';
+import React, {useState} from 'react';
 import Slider from '@react-native-community/slider';
 import TrackPlayer, {useProgress} from 'react-native-track-player';
 
@@ -16,10 +16,15 @@ const formatTime = secs => {
 
 export default function SliderComp() {
   const {position, duration} = useProgress();
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
 
   const handleChange = val => {
     TrackPlayer.seekTo(val);
   };
+
+  Appearance.addChangeListener(scheme => {
+    setTheme(scheme.colorScheme);
+  });
 
   return (
     <View>
@@ -30,12 +35,22 @@ export default function SliderComp() {
         value={position}
         minimumTrackTintColor="#C73EFF"
         maximumTrackTintColor="#000000"
-        thumbTintColor="black"
+        thumbTintColor={theme === 'light' ? '#313131' : 'white'}
         onSlidingComplete={handleChange}
+        backgroundColor={theme === 'light' ? null : '#313131'}
       />
-      <View style={timerUI.timerContainer}>
-        <Text style={timerUI.timerText}>{formatTime(position)}</Text>
-        <Text style={timerUI.timerText}>{formatTime(duration)}</Text>
+      <View
+        style={
+          theme === 'light' ? timerUI.timerContainer : dmTimerUI.timerContainer
+        }>
+        <Text
+          style={theme === 'light' ? timerUI.timerText : dmTimerUI.timerText}>
+          {formatTime(position)}
+        </Text>
+        <Text
+          style={theme === 'light' ? timerUI.timerText : dmTimerUI.timerText}>
+          {formatTime(duration)}
+        </Text>
       </View>
     </View>
   );
@@ -49,6 +64,20 @@ const timerUI = StyleSheet.create({
   timerText: {
     fontSize: 13,
     color: 'black',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+});
+
+const dmTimerUI = StyleSheet.create({
+  timerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#313131',
+  },
+  timerText: {
+    fontSize: 13,
+    color: 'white',
     paddingLeft: 10,
     paddingRight: 10,
   },

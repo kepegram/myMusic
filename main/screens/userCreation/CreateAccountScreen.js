@@ -1,10 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useContext, useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, Alert} from 'react-native';
-import {createAccountUI} from '../../Styles';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Alert,
+  Appearance,
+} from 'react-native';
+import {createAccountUI} from '../../styles/Styles';
 import {AuthContext} from '../../context/AuthContext';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {dmCreateUI} from '../../styles/DarkMode';
 
 const CreateAccount = () => {
   const navigation = useNavigation();
@@ -13,6 +21,12 @@ const CreateAccount = () => {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
+
+  Appearance.addChangeListener(scheme => {
+    setTheme(scheme.colorScheme);
+  });
 
   const handleSubmit = async () => {
     if (name.length === 0 || username.length === 0 || password.length === 0) {
@@ -23,19 +37,25 @@ const CreateAccount = () => {
   };
 
   return (
-    <View style={createAccountUI.container}>
+    <View
+      style={
+        theme === 'light' ? createAccountUI.container : dmCreateUI.container
+      }>
       <View style={createAccountUI.backButtonContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Welcome Screen')}>
           <Icon
-            style={{paddingBottom: 100, paddingRight: 320}}
-            color={'black'}
+            style={{paddingBottom: 90, paddingRight: 320}}
+            color={theme === 'light' ? 'black' : 'white'}
             name={'arrow-back'}
             size={35}
           />
         </TouchableOpacity>
       </View>
       <View style={createAccountUI.form}>
-        <Text style={createAccountUI.label}>name</Text>
+        <Text
+          style={theme === 'light' ? createAccountUI.label : dmCreateUI.label}>
+          name
+        </Text>
         <TextInput
           style={createAccountUI.input}
           placeholder="enter your name"
@@ -44,7 +64,10 @@ const CreateAccount = () => {
           onChangeText={setName}
           secureTextEntry={false}
         />
-        <Text style={createAccountUI.label}>username</Text>
+        <Text
+          style={theme === 'light' ? createAccountUI.label : dmCreateUI.label}>
+          username
+        </Text>
         <TextInput
           style={createAccountUI.input}
           placeholder="enter a username"
@@ -53,7 +76,10 @@ const CreateAccount = () => {
           onChangeText={setUsername}
           secureTextEntry={false}
         />
-        <Text style={createAccountUI.label}>password</Text>
+        <Text
+          style={theme === 'light' ? createAccountUI.label : dmCreateUI.label}>
+          password
+        </Text>
         <TextInput
           style={createAccountUI.input}
           placeholder="enter a password"

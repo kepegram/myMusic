@@ -144,6 +144,11 @@ export const loginScreenUI = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  backButtonContainer: {
+    flexDirection: 'row',
+    paddingBottom: 200,
+    paddingRight: 320,
+  },
   headerText: {
     paddingBottom: 10,
     paddingRight: 222,
@@ -178,18 +183,12 @@ export const loginScreenUI = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
-  inputIcon: {
-    width: 30,
-    height: 30,
-    marginRight: 15,
-    justifyContent: 'center',
-  },
   buttonContainer: {
     height: 45,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 230,
     width: 300,
     borderRadius: 30,
     backgroundColor: 'transparent',
@@ -316,7 +315,7 @@ export const musicPlayerUI = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     // textTransform: 'capitalize',
-    color: 'black',
+    color: '#A6A6A6',
     fontWeight: 'bold',
   },
 });

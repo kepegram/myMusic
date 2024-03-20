@@ -3,6 +3,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ActivityIndicator,
+  Appearance,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -11,6 +12,12 @@ import TrackPlayer, {usePlaybackState, State} from 'react-native-track-player';
 export default function Controller({onNext, onPrevious}) {
   const playbackState = usePlaybackState();
   const [isPlaying, setIsPlaying] = useState('paused');
+
+  const [theme, setTheme] = useState(Appearance.getColorScheme());
+
+  Appearance.addChangeListener(scheme => {
+    setTheme(scheme.colorScheme);
+  });
 
   useEffect(() => {
     if (playbackState === State.Playing) {
@@ -25,9 +32,21 @@ export default function Controller({onNext, onPrevious}) {
   const renderPlayPauseButton = () => {
     switch (isPlaying) {
       case State.Playing:
-        return <Icon color="black" name="pause" size={45} />;
+        return (
+          <Icon
+            color={theme === 'light' ? 'black' : 'white'}
+            name="pause"
+            size={45}
+          />
+        );
       case State.Paused:
-        return <Icon color="black" name="play-arrow" size={45} />;
+        return (
+          <Icon
+            color={theme === 'light' ? 'black' : 'white'}
+            name="play-arrow"
+            size={45}
+          />
+        );
       default:
         return <ActivityIndicator size={45} color="black" />;
     }
@@ -42,15 +61,26 @@ export default function Controller({onNext, onPrevious}) {
   };
 
   return (
-    <View style={controllerUI.container}>
+    <View
+      style={
+        theme === 'light' ? controllerUI.container : dmControllerUI.container
+      }>
       <TouchableOpacity onPress={onPrevious}>
-        <Icon color={'black'} name={'skip-previous'} size={45} />
+        <Icon
+          color={theme === 'light' ? 'black' : 'white'}
+          name={'skip-previous'}
+          size={45}
+        />
       </TouchableOpacity>
       <TouchableOpacity onPress={onPause}>
         {renderPlayPauseButton()}
       </TouchableOpacity>
       <TouchableOpacity onPress={onNext}>
-        <Icon color={'black'} name={'skip-next'} size={45} />
+        <Icon
+          color={theme === 'light' ? 'black' : 'white'}
+          name={'skip-next'}
+          size={45}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -60,6 +90,16 @@ const controllerUI = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: 250,
+    width: '100%',
+  },
+});
+
+const dmControllerUI = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#313131',
+    height: '100%',
+    width: '100%',
   },
 });
