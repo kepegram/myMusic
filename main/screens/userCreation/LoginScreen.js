@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useState, useContext} from 'react';
 import {
   Text,
@@ -13,6 +12,7 @@ import {AuthContext} from '../../context/AuthContext';
 import {dmLoginUI} from '../../styles/DarkMode';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -34,6 +34,9 @@ const LoginScreen = () => {
       login();
     }
   };
+
+  AsyncStorage.setItem('username', username);
+  AsyncStorage.setItem('password', password);
 
   return (
     <View

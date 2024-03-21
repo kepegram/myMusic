@@ -14,6 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 import {AuthContext} from '../../context/AuthContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {dmProfileUI} from '../../styles/DarkMode';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const RegisteredProfile = () => {
   const {logout} = useContext(AuthContext);
@@ -31,6 +32,10 @@ const RegisteredProfile = () => {
     coverPhoto:
       'https://trusteid.mioa.gov.mk/wp-content/plugins/uix-page-builder/uixpb_templates/images/UixPageBuilderTmpl/default-cover-2.jpg',
   };
+
+  AsyncStorage.getItem('username').then(username => {
+    setName(username);
+  });
 
   return (
     <ScrollView

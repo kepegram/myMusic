@@ -10,8 +10,6 @@ TODO:
 
     add bottom music player when returning to library screen
 
-    add login logic (input user info in async storage and display on profile)
-
     research more UI library's to make app look nicer (i.e. UI Kitten)
 
     embed all images used within project file structure

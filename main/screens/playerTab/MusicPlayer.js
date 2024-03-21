@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
 import {
@@ -43,6 +42,8 @@ const MusicPlayer = () => {
     scrollX.addListener(({value}) => {
       const val = Math.round(value / width);
       setSongIndex(val);
+      TrackPlayer.skip(val);
+      TrackPlayer.play();
     });
 
     TrackPlayer.addEventListener(Event.PlaybackTrackChanged, e => {
@@ -50,11 +51,11 @@ const MusicPlayer = () => {
     });
 
     TrackPlayer.setupPlayer().then(async () => {
-      await TrackPlayer.reset();
-      await TrackPlayer.add(Songs);
-      TrackPlayer.play();
-      isPlayerReady.current === true;
-    });
+    await TrackPlayer.reset();
+    await TrackPlayer.add(Songs);
+        TrackPlayer.play();
+    isPlayerReady.current === true;
+});
 
     return () => {
       scrollX.removeAllListeners();
@@ -94,7 +95,10 @@ const MusicPlayer = () => {
 
   return (
     <View style={theme === 'light' ? musicPlayerUI.container : dmPlayerUI.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Library')}>
+      <TouchableOpacity onPress={() => {
+        navigation.navigate('Library');
+        TrackPlayer.pause();
+        }}>
         <Icon style={{paddingTop: 5, paddingRight: 320}} color={theme === 'light' ? '#313131' : 'white'} name={'arrow-back'} size={35} />
       </TouchableOpacity>
       <SafeAreaView style={{height: 410}}>

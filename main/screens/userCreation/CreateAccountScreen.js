@@ -13,6 +13,7 @@ import {AuthContext} from '../../context/AuthContext';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {dmCreateUI} from '../../styles/DarkMode';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CreateAccount = () => {
   const navigation = useNavigation();
@@ -35,6 +36,9 @@ const CreateAccount = () => {
       login();
     }
   };
+
+  AsyncStorage.setItem('username', username);
+  AsyncStorage.setItem('password', password);
 
   return (
     <View
