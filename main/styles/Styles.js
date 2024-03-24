@@ -252,10 +252,11 @@ export const libraryUI = StyleSheet.create({
     padding: 5,
     borderRadius: 0,
     marginHorizontal: -8,
+    flexDirection: 'column',
   },
   cardTitle: {
     fontSize: 18,
-    paddingLeft: 10,
+    paddingLeft: 0,
     color: 'black',
     fontWeight: 'bold',
   },
@@ -265,8 +266,9 @@ export const libraryUI = StyleSheet.create({
   cardArtistName: {
     color: '#888',
     fontSize: 12,
-    paddingLeft: 10,
+    paddingLeft: 0,
     fontWeight: 'bold',
+    paddingBottom: 10,
   },
   cardContent: {
     height: 160,
@@ -275,12 +277,13 @@ export const libraryUI = StyleSheet.create({
   albumCoversContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
-    paddingHorizontal: 10,
-    paddingTop: 20,
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingTop: 10,
     paddingBottom: 10,
   },
   albumCovers: {
-    paddingBottom: 10,
+    paddingBottom: 20,
     height: 150,
     width: 150,
   },
@@ -307,14 +310,12 @@ export const musicPlayerUI = StyleSheet.create({
   songTitle: {
     fontSize: 20,
     textAlign: 'center',
-    // textTransform: 'capitalize',
     color: 'black',
     fontWeight: 'bold',
   },
   songArtist: {
     fontSize: 16,
     textAlign: 'center',
-    // textTransform: 'capitalize',
     color: '#A6A6A6',
     fontWeight: 'bold',
   },

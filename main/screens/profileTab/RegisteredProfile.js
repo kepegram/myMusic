@@ -29,8 +29,7 @@ const RegisteredProfile = () => {
 
   const user = {
     avatar: require('../../../assets/default-imgs/default-pfp.png'),
-    coverPhoto:
-      'https://trusteid.mioa.gov.mk/wp-content/plugins/uix-page-builder/uixpb_templates/images/UixPageBuilderTmpl/default-cover-2.jpg',
+    coverPhoto: require('../../../assets/default-imgs/default-cover-2.jpg'),
   };
 
   AsyncStorage.getItem('username').then(username => {
@@ -40,7 +39,7 @@ const RegisteredProfile = () => {
   return (
     <ScrollView
       style={theme === 'light' ? profileUI.container : dmProfileUI.container}>
-      <Image source={{uri: user.coverPhoto}} style={profileUI.coverPhoto} />
+      <Image source={user.coverPhoto} style={profileUI.coverPhoto} />
       <View style={profileUI.backButtonContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Library')}>
           <Icon

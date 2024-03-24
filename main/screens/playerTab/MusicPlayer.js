@@ -18,7 +18,7 @@ import {musicPlayerUI} from '../../styles/Styles';
 import Controller from './Controller';
 import TrackPlayer, {Event} from 'react-native-track-player';
 import SliderComp from './SliderComp';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import { dmPlayerUI } from '../../styles/DarkMode';
 
@@ -33,6 +33,8 @@ const MusicPlayer = () => {
   const index = useRef(0);
 
   const [theme, setTheme] = useState(Appearance.getColorScheme());
+
+  //const currentSong = TrackPlayer.getCurrentTrack();
 
   Appearance.addChangeListener(scheme => {
     setTheme(scheme.colorScheme);
@@ -50,12 +52,12 @@ const MusicPlayer = () => {
       console.log(e);
     });
 
-    TrackPlayer.setupPlayer().then(async () => {
-    await TrackPlayer.reset();
-    await TrackPlayer.add(Songs);
-        TrackPlayer.play();
-    isPlayerReady.current === true;
-});
+    // TrackPlayer.setupPlayer().then(async () => {
+    // await TrackPlayer.reset();
+    // await TrackPlayer.add(Songs);
+    //     TrackPlayer.play();
+    // isPlayerReady.current === true;
+    // });
 
     return () => {
       scrollX.removeAllListeners();
@@ -86,11 +88,20 @@ const MusicPlayer = () => {
   };
 
   const renderItem = ({item}) => {
+    // for (let i = 0; i < Songs.length; i += 1) {
+    //   if (item.id === TrackPlayer.getCurrentTrack(Songs[i].id)) {
+    //     return (
+    //       <View style={musicPlayerUI.imageContainer}>
+    //         <Image style={musicPlayerUI.albumCover} source={item[i].image} />
+    //       </View>
+    //     );
+    //   }
+    // }
     return (
-      <View style={musicPlayerUI.imageContainer}>
-        <Image style={musicPlayerUI.albumCover} source={item.image} />
-      </View>
-    );
+            <View style={musicPlayerUI.imageContainer}>
+              {/* <Image style={musicPlayerUI.albumCover} source={currentSong.image} /> */}
+            </View>
+          );
   };
 
   return (
@@ -98,8 +109,10 @@ const MusicPlayer = () => {
       <TouchableOpacity onPress={() => {
         navigation.navigate('Library');
         TrackPlayer.pause();
+        // TrackPlayer.reset();
+        // TrackPlayer.add(Songs);
         }}>
-        <Icon style={{paddingTop: 5, paddingRight: 320}} color={theme === 'light' ? '#313131' : 'white'} name={'arrow-back'} size={35} />
+        <Icon style={{paddingTop: 5, paddingRight: 320}} color={theme === 'light' ? '#313131' : 'white'} name={'up'} size={35} />
       </TouchableOpacity>
       <SafeAreaView style={{height: 410}}>
         <FlatList
@@ -118,8 +131,8 @@ const MusicPlayer = () => {
         />
       </SafeAreaView>
       <View>
-        <Text style={theme === 'light' ? musicPlayerUI.songTitle : dmPlayerUI.songTitle}>{Songs[songIndex].title}</Text>
-        <Text style={musicPlayerUI.songArtist}>{Songs[songIndex].artist}</Text>
+        {/* <Text style={theme === 'light' ? musicPlayerUI.songTitle : dmPlayerUI.songTitle}>{currentSong.title}</Text>
+        <Text style={musicPlayerUI.songArtist}>{currentSong.artist}</Text> */}
       </View>
       <SliderComp />
       <Controller onNext={next} onPrevious={previous} />

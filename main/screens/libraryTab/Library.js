@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {
   View,
   SafeAreaView,
   Text,
   TextInput,
   FlatList,
+  ScrollView,
   Image,
   TouchableOpacity,
   ImageBackground,
@@ -14,41 +15,59 @@ import {libraryUI} from '../../styles/Styles';
 import {useNavigation} from '@react-navigation/native';
 import Songs from './Songs';
 import {dmLibraryUI} from '../../styles/DarkMode';
+import TrackPlayer, {Event, State} from 'react-native-track-player';
 
 const Library = () => {
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState('');
-
+  const [songIndex, setSongIndex] = useState(0);
+  const isPlayerReady = useRef(false);
+  const index = useRef(0);
   const [theme, setTheme] = useState(Appearance.getColorScheme());
 
   Appearance.addChangeListener(scheme => {
     setTheme(scheme.colorScheme);
   });
 
-  const renderAppointmentCard = ({item}) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Music Player')}>
-      <SafeAreaView style={libraryUI.card}>
-        <View style={libraryUI.cardContent}>
-          <View style={libraryUI.albumCoversContainer}>
-            <Image source={item.image} style={libraryUI.albumCovers} />
-          </View>
-        </View>
-        <Text
-          style={
-            theme === 'light' ? libraryUI.cardTitle : dmLibraryUI.cardTitle
-          }>
-          {item.title}
-        </Text>
-        <View style={libraryUI.cardArtists}>
-          <Text style={libraryUI.cardArtistName}>{item.artist}</Text>
-        </View>
-      </SafeAreaView>
-    </TouchableOpacity>
-  );
+  useEffect(() => {
+    if (!isPlayerReady.current) {
+      TrackPlayer.setupPlayer().then(async () => {
+        await TrackPlayer.reset();
+        await TrackPlayer.add(Songs);
+        //TrackPlayer.play();
+        console.log('player is setup');
+        isPlayerReady.current === true;
+      });
+    } else {
+      console.log('player is already setup');
+    }
+    return () => {
+      TrackPlayer.reset();
+    };
+  }, []);
 
-  const searchFilter = item => {
-    const query = searchQuery.toLowerCase();
-    return item.title.toLowerCase().includes(query);
+  // useEffect(() => {
+  //   if (isPlayerReady.current) {
+  //     TrackPlayer.skip(Songs[songIndex].id);
+  //   }
+  //   index.current = songIndex;
+  // }, [songIndex]);
+
+  TrackPlayer.addEventListener(Event.PlaybackTrackChanged, e => {
+    console.log(e);
+  });
+
+  // const searchFilter = () => {
+  //   const query = searchQuery.toLowerCase();
+  //   return Songs.title.toLowerCase().includes(query);
+  // };
+
+  const playSong = song => {
+    //TrackPlayer.reset();
+    console.log(song.id++);
+    TrackPlayer.skip(song.id++ - 2);
+    TrackPlayer.play();
+    navigation.navigate('Music Player');
   };
 
   return (
@@ -73,13 +92,25 @@ const Library = () => {
         value={searchQuery}
         onChangeText={setSearchQuery}
       />
-      <FlatList
-        contentContainerStyle={libraryUI.listContainer}
-        data={Songs.filter(searchFilter)}
-        renderItem={renderAppointmentCard}
-        keyExtractor={item => item.id.toString()}
-        numColumns={2}
-      />
+      <ScrollView style={libraryUI.card}>
+        <View style={libraryUI.albumCoversContainer}>
+          {Songs.map(song => {
+            return (
+              <View>
+                <TouchableOpacity onPress={() => playSong(song)}>
+                  <Image
+                    source={song.image}
+                    style={libraryUI.albumCovers}
+                    key={song.id.toString()}
+                  />
+                </TouchableOpacity>
+                <Text style={libraryUI.cardTitle}>{song.title}</Text>
+                <Text style={libraryUI.cardArtistName}>{song.artist}</Text>
+              </View>
+            );
+          })}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

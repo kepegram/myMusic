@@ -9,10 +9,31 @@ const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Library" component={Library} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen
+        name="Library"
+        component={Library}
+        options={{
+          presentaion: 'modal',
+          gestureEnabled: true,
+          animationTypeForReplace: 'push',
+          animation: 'slide_from_bottom',
+        }}
+      />
       <Stack.Screen name="Profile" component={RegisteredProfile} />
-      <Stack.Screen name="Music Player" component={MusicPlayer} />
+      <Stack.Screen
+        name="Music Player"
+        component={MusicPlayer}
+        options={{
+          presentaion: 'modal',
+          gestureEnabled: true,
+          animationTypeForReplace: 'push',
+          animation: 'slide_from_bottom',
+        }}
+      />
       <Stack.Screen name="Settings" component={Settings} />
     </Stack.Navigator>
   );

@@ -7,11 +7,23 @@ TODO:
     add volume controller
 
     add bottom music player when returning to library screen
+        when clicking on song in library:
+            display modal with small simple play pause skip ui then:
+                when clicking on modal blank space:
+                    open music player screen
+
+    add ablity to fetch from music api using axios -> (https://www.google.com/search?q=axios+react+native&rlz=1C1UEAD_enUS1055US1055&oq=axios+react+native&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPNIBCDM5ODRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
+    https://rapidapi.com/guides/axios-react-native
+    https://rapidapi.com/stefan.skliarov/api/Spotify/
+    https://www.npmjs.com/package/react-native-axios
+    https://medium.com/@sp20-bse-104/get-and-post-api-using-axios-in-react-native-1b7ff0251f0b
 
     embed all images used within project file structure
 
-    useful videos:
+    useful links/videos:
     https://www.youtube.com/watch?v=QMUii9fSKfQ
     https://www.youtube.com/watch?v=Ur5-n_D4q5A&ab_channel=CreativeJE
+    (how to shuffle/general use) https://blog.logrocket.com/react-native-track-player-complete-guide/
+    https://www.youtube.com/results?search_query=react+native+music+api
 
     
