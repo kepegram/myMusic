@@ -34,10 +34,10 @@ export default function SliderComp() {
         maximumValue={duration}
         value={position}
         minimumTrackTintColor="#C73EFF"
-        maximumTrackTintColor="#000000"
-        thumbTintColor={theme === 'light' ? '#313131' : 'white'}
+        maximumTrackTintColor="grey"
+        thumbTintColor={theme === 'light' ? 'black' : 'white'}
         onSlidingComplete={handleChange}
-        backgroundColor={theme === 'light' ? null : '#313131'}
+        backgroundColor={theme === 'light' ? null : 'black'}
       />
       <View
         style={
@@ -73,7 +73,7 @@ const dmTimerUI = StyleSheet.create({
   timerContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   timerText: {
     fontSize: 13,

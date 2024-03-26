@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   View,
   StyleSheet,
@@ -7,9 +8,10 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Arrow from 'react-native-vector-icons/AntDesign';
 import TrackPlayer, {usePlaybackState, State} from 'react-native-track-player';
 
-export default function Controller({onNext, onPrevious}) {
+export default function ModalController({onNext}) {
   const playbackState = usePlaybackState();
   const [isPlaying, setIsPlaying] = useState('paused');
 
@@ -36,7 +38,8 @@ export default function Controller({onNext, onPrevious}) {
           <Icon
             color={theme === 'light' ? 'black' : 'white'}
             name="pause"
-            size={45}
+            size={30}
+            style={{paddingTop: 2}}
           />
         );
       case State.Paused:
@@ -44,14 +47,16 @@ export default function Controller({onNext, onPrevious}) {
           <Icon
             color={theme === 'light' ? 'black' : 'white'}
             name="play-arrow"
-            size={45}
+            size={30}
+            style={{paddingTop: 2}}
           />
         );
       default:
         return (
           <ActivityIndicator
-            size={45}
+            size={30}
             color={theme === 'light' ? 'black' : 'white'}
+            style={{paddingTop: 2}}
           />
         );
     }
@@ -70,21 +75,15 @@ export default function Controller({onNext, onPrevious}) {
       style={
         theme === 'light' ? controllerUI.container : dmControllerUI.container
       }>
-      <TouchableOpacity onPress={onPrevious}>
-        <Icon
-          color={theme === 'light' ? 'black' : 'white'}
-          name={'skip-previous'}
-          size={45}
-        />
-      </TouchableOpacity>
       <TouchableOpacity onPress={onPause}>
         {renderPlayPauseButton()}
       </TouchableOpacity>
       <TouchableOpacity onPress={onNext}>
-        <Icon
+        <Arrow
           color={theme === 'light' ? 'black' : 'white'}
-          name={'skip-next'}
-          size={45}
+          name={'forward'}
+          size={20}
+          style={{paddingRight: 3, paddingTop: 7}}
         />
       </TouchableOpacity>
     </View>
@@ -96,6 +95,8 @@ const controllerUI = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
+    paddingLeft: 240,
+    backgroundColor: 'white',
   },
 });
 
@@ -103,8 +104,8 @@ const dmControllerUI = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: 'black',
-    height: '100%',
+    backgroundColor: '#313131',
     width: '100%',
+    paddingLeft: 240,
   },
 });

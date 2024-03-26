@@ -3,7 +3,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 export const dmWelcomeUI = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   content: {
     flex: 4,
@@ -61,7 +61,7 @@ export const dmCreateUI = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   backButtonContainer: {
     flexDirection: 'row',
@@ -122,7 +122,7 @@ export const dmLoginUI = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   headerText: {
     paddingBottom: 10,
@@ -196,7 +196,7 @@ export const dmLibraryUI = StyleSheet.create({
     flex: 1,
     padding: 10,
     paddingTop: 10,
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   headerContainer: {
     flexDirection: 'row',
@@ -232,12 +232,10 @@ export const dmLibraryUI = StyleSheet.create({
     flex: 1,
     marginBottom: 10,
     padding: 5,
-    borderRadius: 0,
     marginHorizontal: -8,
   },
   cardTitle: {
     fontSize: 18,
-    paddingLeft: 10,
     color: 'white',
     fontWeight: 'bold',
   },
@@ -274,7 +272,7 @@ export const dmPlayerUI = StyleSheet.create({
     height: Dimensions.get('window').height,
     alignItems: 'center',
     maxHeight: 500,
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   imageContainer: {
     flexDirection: 'column',
@@ -304,7 +302,7 @@ export const dmPlayerUI = StyleSheet.create({
 export const dmProfileUI = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#313131',
+    backgroundColor: 'black',
   },
   coverPhoto: {
     width: '100%',
