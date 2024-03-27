@@ -1,7 +1,18 @@
-import {StyleSheet, Text, View, Switch, Appearance} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import {
+  StyleSheet,
+  Text,
+  View,
+  Switch,
+  Appearance,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Settings() {
+  const navigation = useNavigation();
   const [theme, setTheme] = useState(Appearance.getColorScheme());
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => {
@@ -19,6 +30,15 @@ export default function Settings() {
           ? settingsScreenUI.lightContainer
           : settingsScreenUI.darkContainer
       }>
+      <TouchableOpacity
+        style={{flex: 1, paddingRight: 330}}
+        onPress={() => navigation.navigate('Profile')}>
+        <Icon
+          name="arrow-back"
+          size={30}
+          color={theme === 'light' ? 'black' : 'white'}
+        />
+      </TouchableOpacity>
       <Text
         style={
           theme === 'dark'

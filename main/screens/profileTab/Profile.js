@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {dmProfileUI} from '../../styles/DarkMode';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const RegisteredProfile = () => {
+const Profile = () => {
   const {logout} = useContext(AuthContext);
   const navigation = useNavigation();
   const [name, setName] = useState('');
@@ -45,7 +45,7 @@ const RegisteredProfile = () => {
           <Icon
             name="arrow-back"
             size={30}
-            color={theme === 'light' ? '#313131' : 'white'}
+            color={theme === 'light' ? 'black' : 'white'}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -54,7 +54,7 @@ const RegisteredProfile = () => {
           <Icon
             name="settings"
             size={30}
-            color={theme === 'light' ? '#313131' : 'white'}
+            color={theme === 'light' ? 'black' : 'white'}
           />
         </TouchableOpacity>
       </View>
@@ -134,4 +134,4 @@ const RegisteredProfile = () => {
   );
 };
 
-export default RegisteredProfile;
+export default Profile;
