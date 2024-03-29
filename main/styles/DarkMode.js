@@ -297,6 +297,15 @@ export const dmPlayerUI = StyleSheet.create({
     color: '#A6A6A6',
     fontWeight: 'bold',
   },
+  handleIndicator: {
+    backgroundColor: 'white',
+  },
+  modalBackground: {
+    backgroundColor: 'black',
+  },
+  nowPlaying: {
+    color: 'white',
+  },
 });
 
 export const dmProfileUI = StyleSheet.create({

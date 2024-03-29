@@ -1,16 +1,11 @@
 TODO:
-    
-    find a better way to select song directly from library (fix encountered children with same key error)
-
-    check to see if/why the slider is not working properly
-
-    make sure song index updates when the song finishes on its own
-
-    add ability to toggle to dark mode in settings screen
 
     add volume controller in the music player
+    -> https://github.com/hirbod/react-native-volume-manager/blob/main/example/App.tsx
+   
+    check to see if/why the slider is not working properly
 
-    potentially get rid of the sliding on album art functionality in music player screen (complicates things)
+    add ability to toggle to dark mode in settings screen
 
     add ablity to fetch from music api using axios -> (https://www.google.com/search?q=axios+react+native&rlz=1C1UEAD_enUS1055US1055&oq=axios+react+native&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPNIBCDM5ODRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
     https://rapidapi.com/guides/axios-react-native
@@ -27,5 +22,9 @@ TODO:
     https://blog.logrocket.com/react-native-track-player-complete-guide/
     https://medium.com/@bharat.tiwari/creating-an-audio-player-in-react-native-2628c4262db4
     https://garden.mirahi.io/seting-up-a-floating-music-player-in-react-native/
+    https://www.youtube.com/watch?v=oIEykI5oagI&ab_channel=SimonGrimm
+    https://ui.gorhom.dev/components/bottom-sheet/
+    https://rntp.dev/docs/basics/installation
+    https://github.com/doublesymmetry/react-native-track-player/blob/main/example/src/App.tsx
 
     

@@ -319,6 +319,15 @@ export const musicPlayerUI = StyleSheet.create({
     color: '#A6A6A6',
     fontWeight: 'bold',
   },
+  handleIndicator: {
+    backgroundColor: 'black',
+  },
+  modalBackground: {
+    backgroundColor: 'white',
+  },
+  nowPlaying: {
+    color: 'white',
+  },
 });
 
 export const profileUI = StyleSheet.create({

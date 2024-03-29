@@ -50,7 +50,7 @@ export default function Controller({onNext, onPrevious}) {
       default:
         return (
           <ActivityIndicator
-            size={45}
+            size={40}
             color={theme === 'light' ? 'black' : 'white'}
           />
         );
