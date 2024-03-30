@@ -2,16 +2,14 @@ TODO:
 
     add volume controller in the music player
     -> https://github.com/hirbod/react-native-volume-manager/blob/main/example/App.tsx
-   
-    check to see if/why the slider is not working properly
-
-    add ability to toggle to dark mode in settings screen
 
     add ablity to fetch from music api using axios -> (https://www.google.com/search?q=axios+react+native&rlz=1C1UEAD_enUS1055US1055&oq=axios+react+native&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPNIBCDM5ODRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
     https://rapidapi.com/guides/axios-react-native
     https://rapidapi.com/stefan.skliarov/api/Spotify/
     https://www.npmjs.com/package/react-native-axios
     https://medium.com/@sp20-bse-104/get-and-post-api-using-axios-in-react-native-1b7ff0251f0b
+
+    add abilty to shuffle all songs from API
 
     useful links/videos:
     https://www.youtube.com/watch?v=QMUii9fSKfQ

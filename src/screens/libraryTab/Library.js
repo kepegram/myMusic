@@ -24,6 +24,7 @@ import {libraryUI} from '../../styles/Styles';
 import {dmLibraryUI} from '../../styles/DarkMode';
 import {musicPlayerUI} from '../../styles/Styles';
 import {dmPlayerUI} from '../../styles/DarkMode';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Songs from './Songs';
 import Controller from '../playerTab/Controller';
 import Slider from '@react-native-community/slider';
@@ -49,6 +50,7 @@ const Library = () => {
   const slider = useRef(null);
   const [theme, setTheme] = useState(Appearance.getColorScheme());
   const {position, duration} = useProgress();
+  const bottomSheetRef = useRef(BottomSheet);
 
   const handleChange = val => {
     TrackPlayer.seekTo(val);
@@ -57,6 +59,8 @@ const Library = () => {
   Appearance.addChangeListener(scheme => {
     setTheme(scheme.colorScheme);
   });
+
+  const handleOpenPress = () => bottomSheetRef.current?.expand();
 
   const setUpPlayer = () => {
     TrackPlayer.reset();
@@ -70,6 +74,7 @@ const Library = () => {
     TrackPlayer.skip(song.id - 1);
     TrackPlayer.play();
     setSongIndex(song.id - 1);
+    handleOpenPress();
   };
 
   const next = async () => {
@@ -100,9 +105,11 @@ const Library = () => {
       style={theme === 'light' ? libraryUI.container : dmLibraryUI.container}>
       <View style={libraryUI.headerContainer}>
         <Text style={theme === 'light' ? libraryUI.title : dmLibraryUI.title}>
-          library
+          Library
         </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+        <TouchableOpacity
+          style={{paddingRight: 10}}
+          onPress={() => navigation.navigate('Profile')}>
           <ImageBackground
             source={require('../../../assets/default-imgs/default-pfp.png')}
             style={libraryUI.userAvatarSize}
@@ -110,13 +117,15 @@ const Library = () => {
           />
         </TouchableOpacity>
       </View>
-      <TextInput
-        style={libraryUI.searchInput}
-        placeholder="search for songs here..."
-        placeholderTextColor="#A9A9A9"
-        value={searchQuery}
-        onChangeText={setSearchQuery}
-      />
+      <View style={{paddingLeft: 10}}>
+        <TextInput
+          style={libraryUI.searchInput}
+          placeholder="search for songs here..."
+          placeholderTextColor="#A9A9A9"
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+        />
+      </View>
       <ScrollView style={libraryUI.card}>
         <View style={libraryUI.albumCoversContainer}>
           {Songs.filter(searchFilter).map(song => {
@@ -147,6 +156,9 @@ const Library = () => {
         </View>
       </ScrollView>
       <BottomSheet
+        index={-1}
+        snapPoints={snapPoints}
+        ref={bottomSheetRef}
         handleIndicatorStyle={
           theme === 'light'
             ? musicPlayerUI.handleIndicator
@@ -156,8 +168,7 @@ const Library = () => {
           theme === 'light'
             ? musicPlayerUI.modalBackground
             : dmPlayerUI.modalBackground
-        }
-        snapPoints={snapPoints}>
+        }>
         <View
           style={
             theme === 'light' ? musicPlayerUI.container : dmPlayerUI.container
@@ -172,7 +183,7 @@ const Library = () => {
               {`Now playing: ${Songs[songIndex].title} by ${Songs[songIndex].artist}`}
             </Text>
           ) : null}
-          <SafeAreaView style={{height: 410}}>
+          <SafeAreaView style={{height: 550}}>
             <View style={musicPlayerUI.imageContainer}>
               <Image
                 style={musicPlayerUI.albumCover}

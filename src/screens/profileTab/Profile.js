@@ -15,6 +15,7 @@ import {AuthContext} from '../../context/AuthContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {dmProfileUI} from '../../styles/DarkMode';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Profile = () => {
   const {logout} = useContext(AuthContext);
@@ -40,7 +41,7 @@ const Profile = () => {
     <ScrollView
       style={theme === 'light' ? profileUI.container : dmProfileUI.container}>
       <Image source={user.coverPhoto} style={profileUI.coverPhoto} />
-      <View style={profileUI.backButtonContainer}>
+      <SafeAreaView style={profileUI.backButtonContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('Library')}>
           <Icon
             name="arrow-back"
@@ -57,7 +58,7 @@ const Profile = () => {
             color={theme === 'light' ? 'black' : 'white'}
           />
         </TouchableOpacity>
-      </View>
+      </SafeAreaView>
       <View style={profileUI.avatarContainer}>
         <TouchableOpacity onPress={() => {}}>
           <Image source={user.avatar} style={profileUI.avatar} />

@@ -1,9 +1,33 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 
-export const dmWelcomeUI = StyleSheet.create({
+const width = Dimensions.get('window').width;
+
+export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#3C3C3C',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  header: {
+    width: Dimensions.get('window').width,
+    height: 50,
+  },
+  headerText: {
+    paddingLeft: 100,
+    fontSize: 35,
+    color: 'white',
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export const welcomeScreenUI = StyleSheet.create({
+  container: {
+    flex: 1,
   },
   content: {
     flex: 4,
@@ -12,7 +36,7 @@ export const dmWelcomeUI = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   desc: {
@@ -46,7 +70,7 @@ export const dmWelcomeUI = StyleSheet.create({
   },
   newText: {
     fontSize: 14,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   createText: {
@@ -56,12 +80,11 @@ export const dmWelcomeUI = StyleSheet.create({
   },
 });
 
-export const dmCreateUI = StyleSheet.create({
+export const createAccountUI = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'black',
   },
   backButtonContainer: {
     flexDirection: 'row',
@@ -76,7 +99,7 @@ export const dmCreateUI = StyleSheet.create({
   },
   label: {
     marginBottom: 5,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   input: {
@@ -117,18 +140,22 @@ export const dmCreateUI = StyleSheet.create({
   },
 });
 
-export const dmLoginUI = StyleSheet.create({
+export const loginScreenUI = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'black',
+  },
+  backButtonContainer: {
+    flexDirection: 'row',
+    paddingBottom: 200,
+    paddingRight: 320,
   },
   headerText: {
     paddingBottom: 10,
     paddingRight: 222,
     fontSize: 26,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   inputContainer: {
@@ -158,18 +185,12 @@ export const dmLoginUI = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
-  inputIcon: {
-    width: 30,
-    height: 30,
-    marginRight: 15,
-    justifyContent: 'center',
-  },
   buttonContainer: {
     height: 45,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 230,
     width: 300,
     borderRadius: 30,
     backgroundColor: 'transparent',
@@ -191,12 +212,11 @@ export const dmLoginUI = StyleSheet.create({
   },
 });
 
-export const dmLibraryUI = StyleSheet.create({
+export const libraryUI = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
     paddingTop: 10,
-    backgroundColor: 'black',
   },
   headerContainer: {
     flexDirection: 'row',
@@ -208,8 +228,10 @@ export const dmLibraryUI = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   userAvatarSize: {
     width: 35,
@@ -219,11 +241,12 @@ export const dmLibraryUI = StyleSheet.create({
     borderRadius: 25,
   },
   searchInput: {
-    height: 40,
+    height: 35,
+    width: 410,
     borderWidth: 2,
     borderRadius: 5,
     borderColor: '#A9A9A9',
-    marginBottom: 10,
+    marginBottom: -10,
     paddingHorizontal: 10,
     color: 'black',
     fontWeight: 'bold',
@@ -231,12 +254,13 @@ export const dmLibraryUI = StyleSheet.create({
   card: {
     flex: 1,
     marginBottom: 10,
-    padding: 5,
-    marginHorizontal: -8,
+    padding: 20,
+    marginHorizontal: -20,
+    flexDirection: 'column',
   },
   cardTitle: {
     fontSize: 18,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   cardArtists: {
@@ -245,8 +269,8 @@ export const dmLibraryUI = StyleSheet.create({
   cardArtistName: {
     color: '#888',
     fontSize: 12,
-    paddingLeft: 10,
     fontWeight: 'bold',
+    paddingBottom: 10,
   },
   cardContent: {
     height: 160,
@@ -255,40 +279,38 @@ export const dmLibraryUI = StyleSheet.create({
   albumCoversContainer: {
     flexWrap: 'wrap',
     flexDirection: 'row',
-    paddingHorizontal: 10,
-    paddingTop: 20,
-    paddingBottom: 10,
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingTop: 0,
   },
   albumCovers: {
-    paddingBottom: 10,
-    height: 150,
-    width: 150,
+    paddingBottom: 20,
+    height: 180,
+    width: 180,
+    borderRadius: 10,
   },
 });
 
-export const dmPlayerUI = StyleSheet.create({
+export const musicPlayerUI = StyleSheet.create({
   container: {
-    justifyContent: 'space-between',
-    height: Dimensions.get('window').height,
     alignItems: 'center',
     maxHeight: 500,
-    backgroundColor: 'black',
   },
   imageContainer: {
-    flexDirection: 'column',
-    width: Dimensions.get('window').width,
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 70,
   },
   albumCover: {
     width: 320,
     height: 320,
     borderRadius: 10,
+    marginBottom: -100,
   },
   songTitle: {
     fontSize: 20,
     textAlign: 'center',
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   songArtist: {
@@ -298,20 +320,20 @@ export const dmPlayerUI = StyleSheet.create({
     fontWeight: 'bold',
   },
   handleIndicator: {
-    backgroundColor: 'white',
+    backgroundColor: 'black',
   },
   modalBackground: {
-    backgroundColor: 'black',
+    backgroundColor: 'white',
   },
   nowPlaying: {
     color: 'white',
   },
 });
 
-export const dmProfileUI = StyleSheet.create({
+export const profileUI = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#f6f6f6',
   },
   coverPhoto: {
     width: '100%',
@@ -345,7 +367,7 @@ export const dmProfileUI = StyleSheet.create({
     marginTop: 15,
     fontSize: 20,
     textDecorationLine: 'underline',
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   statsContainer: {
@@ -359,7 +381,7 @@ export const dmProfileUI = StyleSheet.create({
   },
   statCount: {
     fontSize: 20,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   statLabel: {
@@ -380,7 +402,7 @@ export const dmProfileUI = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 18,
-    color: 'white',
+    color: 'black',
     fontWeight: 'bold',
   },
   seeAllButton: {
