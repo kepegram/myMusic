@@ -58,11 +58,11 @@ const CreateAccount = () => {
       <View style={createAccountUI.form}>
         <Text
           style={theme === 'light' ? createAccountUI.label : dmCreateUI.label}>
-          name
+          Name
         </Text>
         <TextInput
           style={createAccountUI.input}
-          placeholder="enter your name"
+          placeholder="Enter your name"
           placeholderTextColor={'#CBCBCB'}
           value={name}
           onChangeText={setName}
@@ -70,11 +70,11 @@ const CreateAccount = () => {
         />
         <Text
           style={theme === 'light' ? createAccountUI.label : dmCreateUI.label}>
-          username
+          Username
         </Text>
         <TextInput
           style={createAccountUI.input}
-          placeholder="enter a username"
+          placeholder="Enter a username"
           placeholderTextColor={'#CBCBCB'}
           value={username}
           onChangeText={setUsername}
@@ -82,18 +82,18 @@ const CreateAccount = () => {
         />
         <Text
           style={theme === 'light' ? createAccountUI.label : dmCreateUI.label}>
-          password
+          Password
         </Text>
         <TextInput
           style={createAccountUI.input}
-          placeholder="enter a password"
+          placeholder="Enter a password"
           placeholderTextColor={'#CBCBCB'}
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
         />
         <TouchableOpacity style={createAccountUI.button} onPress={handleSubmit}>
-          <Text style={createAccountUI.buttonText}>create account</Text>
+          <Text style={createAccountUI.buttonText}>Create Account</Text>
         </TouchableOpacity>
       </View>
     </View>

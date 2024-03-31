@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
   ImageBackground,
   Appearance,
-  Dimensions,
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import TrackPlayer, {
@@ -24,12 +24,10 @@ import {libraryUI} from '../../styles/Styles';
 import {dmLibraryUI} from '../../styles/DarkMode';
 import {musicPlayerUI} from '../../styles/Styles';
 import {dmPlayerUI} from '../../styles/DarkMode';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Songs from './Songs';
 import Controller from '../playerTab/Controller';
 import Slider from '@react-native-community/slider';
-
-const {width} = Dimensions.get('window');
+import VolumeSlider from '../playerTab/VolumeSlider';
 
 const formatTime = secs => {
   let minutes = Math.floor(secs / 60);
@@ -46,8 +44,6 @@ const Library = () => {
   const playbackState = usePlaybackState();
   const [searchQuery, setSearchQuery] = useState('');
   const [songIndex, setSongIndex] = useState(0);
-  const index = useRef(0);
-  const slider = useRef(null);
   const [theme, setTheme] = useState(Appearance.getColorScheme());
   const {position, duration} = useProgress();
   const bottomSheetRef = useRef(BottomSheet);
@@ -80,16 +76,14 @@ const Library = () => {
   const next = async () => {
     await TrackPlayer.skip(songIndex + 1);
     await TrackPlayer.play();
-    console.log('-----CURRENT SONG-----', songIndex + 1);
+    console.log('-----CURRENT SONG INDEX-----', songIndex + 1);
     setSongIndex(songIndex + 1);
   };
 
   const previous = async () => {
-    slider.current.scrollToOffset({
-      offset: (index.current - 1) * width,
-    });
     await TrackPlayer.skip(songIndex - 1);
     await TrackPlayer.play();
+    console.log('-----CURRENT SONG INDEX-----', songIndex - 1);
     setSongIndex(songIndex - 1);
   };
 
@@ -128,28 +122,21 @@ const Library = () => {
       </View>
       <ScrollView style={libraryUI.card}>
         <View style={libraryUI.albumCoversContainer}>
-          {Songs.filter(searchFilter).map(song => {
+          {Songs.filter(searchFilter).map((song, mapIndex) => {
             return (
-              <View>
+              <View key={mapIndex}>
                 <TouchableOpacity onPress={() => playSong(song)}>
-                  <Image
-                    source={song.image}
-                    style={libraryUI.albumCovers}
-                    key={song.id}
-                  />
+                  <Image source={song.image} style={libraryUI.albumCovers} />
                 </TouchableOpacity>
                 <Text
                   style={
                     theme === 'light'
                       ? libraryUI.cardTitle
                       : dmLibraryUI.cardTitle
-                  }
-                  key={song.title}>
+                  }>
                   {song.title}
                 </Text>
-                <Text style={libraryUI.cardArtistName} key={song.artist}>
-                  {song.artist}
-                </Text>
+                <Text style={libraryUI.cardArtistName}>{song.artist}</Text>
               </View>
             );
           })}
@@ -183,7 +170,7 @@ const Library = () => {
               {`Now playing: ${Songs[songIndex].title} by ${Songs[songIndex].artist}`}
             </Text>
           ) : null}
-          <SafeAreaView style={{height: 550}}>
+          <SafeAreaView style={{height: Dimensions.get('screen').height - 250}}>
             <View style={musicPlayerUI.imageContainer}>
               <Image
                 style={musicPlayerUI.albumCover}
@@ -237,6 +224,7 @@ const Library = () => {
             </View>
           </View>
           <Controller onNext={next} onPrevious={previous} />
+          <VolumeSlider />
         </View>
       </BottomSheet>
     </SafeAreaView>

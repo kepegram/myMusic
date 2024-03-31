@@ -54,12 +54,12 @@ const LoginScreen = () => {
         style={
           theme === 'light' ? loginScreenUI.headerText : dmLoginUI.headerText
         }>
-        login
+        Login
       </Text>
       <View style={loginScreenUI.inputContainer}>
         <TextInput
           style={loginScreenUI.inputs}
-          placeholder="username"
+          placeholder="Username"
           placeholderTextColor={'#CBCBCB'}
           value={username}
           underlineColorAndroid="transparent"
@@ -70,7 +70,7 @@ const LoginScreen = () => {
       <View style={loginScreenUI.inputContainer}>
         <TextInput
           style={loginScreenUI.inputs}
-          placeholder="password"
+          placeholder="Password"
           placeholderTextColor={'#CBCBCB'}
           value={password}
           secureTextEntry={true}
@@ -82,7 +82,7 @@ const LoginScreen = () => {
       <TouchableOpacity
         style={[loginScreenUI.buttonContainer, loginScreenUI.loginButton]}
         onPress={() => handleLogin()}>
-        <Text style={loginScreenUI.loginText}>login</Text>
+        <Text style={loginScreenUI.loginText}>Login</Text>
       </TouchableOpacity>
     </View>
   );

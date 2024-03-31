@@ -1,5 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import TrackPlayer from 'react-native-track-player';
 
 export const AuthContext = createContext();
 
@@ -19,6 +20,7 @@ export const AuthProvider = ({children}) => {
     setUserToken(null);
     AsyncStorage.removeItem('userToken');
     setIsLoading(false);
+    TrackPlayer.pause();
   };
 
   const isLoggedIn = async () => {

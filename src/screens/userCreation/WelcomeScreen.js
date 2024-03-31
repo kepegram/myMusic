@@ -20,11 +20,11 @@ const WelcomeScreen = () => {
       <View style={welcomeScreenUI.content}>
         <Text
           style={theme === 'light' ? welcomeScreenUI.title : dmWelcomeUI.title}>
-          welcome to mymuze!
+          Welcome to myMusic!
         </Text>
         <Text style={welcomeScreenUI.desc}>
           {
-            'please log in or create an account\n to conjour playlists and share your music!'
+            'Please log in or create an account\n to conjour playlists and share your music!'
           }
         </Text>
       </View>
@@ -32,7 +32,7 @@ const WelcomeScreen = () => {
         <TouchableOpacity
           style={[welcomeScreenUI.button, welcomeScreenUI.login]}
           onPress={() => navigation.navigate('Login Screen')}>
-          <Text style={welcomeScreenUI.buttonText}>login</Text>
+          <Text style={welcomeScreenUI.buttonText}>Login</Text>
         </TouchableOpacity>
       </View>
       <View style={welcomeScreenUI.newUserContainer}>
@@ -40,10 +40,10 @@ const WelcomeScreen = () => {
           style={
             theme === 'light' ? welcomeScreenUI.newText : dmWelcomeUI.newText
           }>
-          new here?{' '}
+          New Here?
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate('Create Account')}>
-          <Text style={welcomeScreenUI.createText}>create account</Text>
+          <Text style={welcomeScreenUI.createText}>Create Account</Text>
         </TouchableOpacity>
       </View>
     </View>

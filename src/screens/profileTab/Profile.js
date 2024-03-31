@@ -7,6 +7,7 @@ import {
   ScrollView,
   Alert,
   Appearance,
+  Dimensions,
 } from 'react-native';
 import React, {useState, useContext} from 'react';
 import {profileUI} from '../../styles/Styles';
@@ -50,7 +51,10 @@ const Profile = () => {
           />
         </TouchableOpacity>
         <TouchableOpacity
-          style={{paddingLeft: 295, paddingTop: 2}}
+          style={{
+            paddingLeft: Dimensions.get('screen').width - 60,
+            paddingTop: 2,
+          }}
           onPress={() => navigation.navigate('Settings')}>
           <Icon
             name="settings"
@@ -80,7 +84,7 @@ const Profile = () => {
               0
             </Text>
           </TouchableOpacity>
-          <Text style={profileUI.statLabel}>total songs</Text>
+          <Text style={profileUI.statLabel}>Total Songs</Text>
         </View>
         <View style={profileUI.statContainer}>
           <TouchableOpacity onPress={() => {}}>
@@ -91,7 +95,7 @@ const Profile = () => {
               0
             </Text>
           </TouchableOpacity>
-          <Text style={profileUI.statLabel}>hours{'\n'}listened</Text>
+          <Text style={profileUI.statLabel}>Hours{'\n'}Listened</Text>
         </View>
       </View>
 
@@ -103,10 +107,10 @@ const Profile = () => {
                 ? profileUI.sectionTitle
                 : dmProfileUI.sectionTitle
             }>
-            your songs:
+            Your Songs:
           </Text>
           <TouchableOpacity style={profileUI.seeAllButton} onPress={() => {}}>
-            <Text style={profileUI.seeAllButtonText}>see all</Text>
+            <Text style={profileUI.seeAllButtonText}>See All</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -114,21 +118,21 @@ const Profile = () => {
       <View style={profileUI.logOutContainer}>
         <TouchableOpacity
           onPress={() =>
-            Alert.alert('logout', 'are you sure you wish to logout?', [
+            Alert.alert('Logout', 'Are you sure you wish to logout?', [
               {
-                text: 'cancel',
+                text: 'Cancel',
                 onPress: () => {},
                 style: 'cancel',
               },
               {
-                text: 'logout',
+                text: 'Logout',
                 onPress: () => {
                   logout();
                 },
               },
             ])
           }>
-          <Text style={profileUI.logOutText}>logout</Text>
+          <Text style={profileUI.logOutText}>Logout</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>

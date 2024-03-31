@@ -1,5 +1,7 @@
 TODO:
 
+    fix behavior when a song reaches the end without skipping (needs to change the title and image)
+    
     add volume controller in the music player
     -> https://github.com/hirbod/react-native-volume-manager/blob/main/example/App.tsx
 

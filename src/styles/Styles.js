@@ -107,7 +107,7 @@ export const createAccountUI = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 30,
     borderBottomWidth: 1,
-    width: 280,
+    width: 330,
     height: 45,
     marginBottom: 20,
     flexDirection: 'row',
@@ -126,6 +126,7 @@ export const createAccountUI = StyleSheet.create({
     fontWeight: 'bold',
   },
   button: {
+    width: 330,
     marginTop: 20,
     backgroundColor: '#C73EFF',
     borderRadius: 30,
@@ -242,7 +243,7 @@ export const libraryUI = StyleSheet.create({
   },
   searchInput: {
     height: 35,
-    width: 410,
+    width: width - 20,
     borderWidth: 2,
     borderRadius: 5,
     borderColor: '#A9A9A9',
@@ -285,8 +286,8 @@ export const libraryUI = StyleSheet.create({
   },
   albumCovers: {
     paddingBottom: 20,
-    height: 180,
-    width: 180,
+    height: 160,
+    width: 160,
     borderRadius: 10,
   },
 });
@@ -302,10 +303,10 @@ export const musicPlayerUI = StyleSheet.create({
     alignItems: 'center',
   },
   albumCover: {
-    width: 320,
-    height: 320,
+    width: 340,
+    height: 340,
     borderRadius: 10,
-    marginBottom: -100,
+    marginBottom: -50,
   },
   songTitle: {
     fontSize: 20,
