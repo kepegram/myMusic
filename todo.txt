@@ -1,10 +1,5 @@
 TODO:
 
-    fix behavior when a song reaches the end without skipping (needs to change the title and image)
-    
-    add volume controller in the music player
-    -> https://github.com/hirbod/react-native-volume-manager/blob/main/example/App.tsx
-
     add ablity to fetch from music api using axios -> (https://www.google.com/search?q=axios+react+native&rlz=1C1UEAD_enUS1055US1055&oq=axios+react+native&gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBwgBEAAYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPNIBCDM5ODRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8)
     https://rapidapi.com/guides/axios-react-native
     https://rapidapi.com/stefan.skliarov/api/Spotify/
@@ -13,18 +8,19 @@ TODO:
 
     add abilty to shuffle all songs from API
 
+    fix behavior when a song reaches the end without skipping (needs to change the title and image)
+
     useful links/videos:
-    https://www.youtube.com/watch?v=QMUii9fSKfQ
-    https://www.youtube.com/watch?v=Ur5-n_D4q5A&ab_channel=CreativeJE
+    (login authentication) https://www.youtube.com/watch?v=QMUii9fSKfQ
+    (music player implementation) https://www.youtube.com/watch?v=Ur5-n_D4q5A&ab_channel=CreativeJE
     (how to shuffle/general use) https://blog.logrocket.com/react-native-track-player-complete-guide/
-    https://www.youtube.com/results?search_query=react+native+music+api
-    https://blog.expo.dev/react-native-flatlist-made-easy-20fca51e0327
-    https://blog.logrocket.com/react-native-track-player-complete-guide/
-    https://medium.com/@bharat.tiwari/creating-an-audio-player-in-react-native-2628c4262db4
-    https://garden.mirahi.io/seting-up-a-floating-music-player-in-react-native/
-    https://www.youtube.com/watch?v=oIEykI5oagI&ab_channel=SimonGrimm
-    https://ui.gorhom.dev/components/bottom-sheet/
-    https://rntp.dev/docs/basics/installation
-    https://github.com/doublesymmetry/react-native-track-player/blob/main/example/src/App.tsx
+    (api fetch yt search) https://www.youtube.com/results?search_query=react+native+music+api
+    (example track player implementation) https://blog.logrocket.com/react-native-track-player-complete-guide/
+    (example track player implementation) https://medium.com/@bharat.tiwari/creating-an-audio-player-in-react-native-2628c4262db4
+    (example track player implementation) https://garden.mirahi.io/seting-up-a-floating-music-player-in-react-native/
+    (bottom sheet implementation) https://www.youtube.com/watch?v=oIEykI5oagI&ab_channel=SimonGrimm
+    (bottom sheet dev guide) https://ui.gorhom.dev/components/bottom-sheet/
+    (track player dev guide) https://rntp.dev/docs/basics/installation
+    (track player example repo) https://github.com/doublesymmetry/react-native-track-player/blob/main/example/src/App.tsx
 
     

@@ -243,7 +243,7 @@ export const libraryUI = StyleSheet.create({
   },
   searchInput: {
     height: 35,
-    width: width - 20,
+    width: width - 40,
     borderWidth: 2,
     borderRadius: 5,
     borderColor: '#A9A9A9',
@@ -286,8 +286,8 @@ export const libraryUI = StyleSheet.create({
   },
   albumCovers: {
     paddingBottom: 20,
-    height: 160,
-    width: 160,
+    height: 145,
+    width: 145,
     borderRadius: 10,
   },
 });
@@ -303,8 +303,8 @@ export const musicPlayerUI = StyleSheet.create({
     alignItems: 'center',
   },
   albumCover: {
-    width: 340,
-    height: 340,
+    width: 300,
+    height: 300,
     borderRadius: 10,
     marginBottom: -50,
   },

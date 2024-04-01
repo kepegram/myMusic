@@ -48,10 +48,6 @@ const Library = () => {
   const {position, duration} = useProgress();
   const bottomSheetRef = useRef(BottomSheet);
 
-  const handleChange = val => {
-    TrackPlayer.seekTo(val);
-  };
-
   Appearance.addChangeListener(scheme => {
     setTheme(scheme.colorScheme);
   });
@@ -87,12 +83,16 @@ const Library = () => {
     setSongIndex(songIndex - 1);
   };
 
-  const snapPoints = useMemo(() => ['7%', '100%'], []);
+  const handleChange = val => {
+    TrackPlayer.seekTo(val);
+  };
 
   const searchFilter = item => {
     const query = searchQuery.toLowerCase();
     return item.title.toLowerCase().includes(query);
   };
+
+  const snapPoints = useMemo(() => ['7%', '100%'], []);
 
   return (
     <SafeAreaView
@@ -170,7 +170,7 @@ const Library = () => {
               {`Now playing: ${Songs[songIndex].title} by ${Songs[songIndex].artist}`}
             </Text>
           ) : null}
-          <SafeAreaView style={{height: Dimensions.get('screen').height - 250}}>
+          <SafeAreaView style={{height: Dimensions.get('screen').height - 400}}>
             <View style={musicPlayerUI.imageContainer}>
               <Image
                 style={musicPlayerUI.albumCover}

@@ -104,7 +104,6 @@ const dmControllerUI = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     backgroundColor: 'black',
-    height: '100%',
     width: '100%',
   },
 });
