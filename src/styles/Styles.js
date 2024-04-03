@@ -249,7 +249,7 @@ export const libraryUI = StyleSheet.create({
     borderColor: '#A9A9A9',
     marginBottom: -10,
     paddingHorizontal: 10,
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
   },
   card: {

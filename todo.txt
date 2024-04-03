@@ -22,5 +22,6 @@ TODO:
     (bottom sheet dev guide) https://ui.gorhom.dev/components/bottom-sheet/
     (track player dev guide) https://rntp.dev/docs/basics/installation
     (track player example repo) https://github.com/doublesymmetry/react-native-track-player/blob/main/example/src/App.tsx
+    (track player example repo (can be used to fix slider implementation)) https://github.com/mirahi-io/react-native-floating-player
 
     

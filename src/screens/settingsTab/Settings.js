@@ -10,6 +10,7 @@ import {
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import APIsongs from '../libraryTab/APIsongs';
 
 export default function Settings() {
   const navigation = useNavigation();
@@ -31,7 +32,7 @@ export default function Settings() {
           : settingsScreenUI.darkContainer
       }>
       <TouchableOpacity
-        style={{flex: 1, paddingRight: 330}}
+        style={{paddingRight: 330}}
         onPress={() => navigation.navigate('Profile')}>
         <Icon
           name="arrow-back"
@@ -53,6 +54,7 @@ export default function Settings() {
         onValueChange={toggleSwitch}
         value={isEnabled}
       />
+      <APIsongs />
     </View>
   );
 }
