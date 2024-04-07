@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {
   View,
   Image,
@@ -7,7 +6,6 @@ import {
   ScrollView,
   Alert,
   Appearance,
-  Dimensions,
 } from 'react-native';
 import React, {useState, useContext} from 'react';
 import {profileUI} from '../../styles/Styles';
@@ -46,18 +44,6 @@ const Profile = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Library')}>
           <Icon
             name="arrow-back"
-            size={30}
-            color={theme === 'light' ? 'black' : 'white'}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={{
-            paddingLeft: Dimensions.get('screen').width - 60,
-            paddingTop: 2,
-          }}
-          onPress={() => navigation.navigate('Settings')}>
-          <Icon
-            name="settings"
             size={30}
             color={theme === 'light' ? 'black' : 'white'}
           />

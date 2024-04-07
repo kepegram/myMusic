@@ -107,7 +107,7 @@ export const createAccountUI = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 30,
     borderBottomWidth: 1,
-    width: 330,
+    width: width - 80,
     height: 45,
     marginBottom: 20,
     flexDirection: 'row',
@@ -126,7 +126,7 @@ export const createAccountUI = StyleSheet.create({
     fontWeight: 'bold',
   },
   button: {
-    width: 330,
+    width: width - 80,
     marginTop: 20,
     backgroundColor: '#C73EFF',
     borderRadius: 30,
@@ -247,7 +247,6 @@ export const libraryUI = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 5,
     borderColor: '#A9A9A9',
-    marginBottom: -10,
     paddingHorizontal: 10,
     color: 'white',
     fontWeight: 'bold',
@@ -282,7 +281,6 @@ export const libraryUI = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingTop: 0,
   },
   albumCovers: {
     paddingBottom: 20,

@@ -1,6 +1,44 @@
+# App Preview
+
+Welcome Screen:
+<p>
+<img src = 'assets/app-imgs/Screenshot_20240407_202033_myMUZE.jpg' alt= 'lm-welcome-screen' height='400' />
+<img src = 'assets/app-imgs/Screenshot_20240407_202339_myMUZE.jpg' height='400' />
+</p>
+
+Login:
+<p>
+<img src = 'assets/app-imgs/Screenshot_20240407_202049_myMUZE.jpg' height='400' />
+<img src = 'assets/app-imgs/Screenshot_20240407_202354_myMUZE.jpg' height='400' />
+</p>
+
+Create Account:
+<p>
+<img src = 'assets/app-imgs/Screenshot_20240407_202413_myMUZE.jpg' height='400' />
+<img src = 'assets/app-imgs/Screenshot_20240407_202347_myMUZE.jpg' height='400' />
+</p>
+
+Library:
+<p>
+<img src = 'assets/app-imgs/Screenshot_20240407_202102_myMUZE.jpg' alt= 'lm-welcome-screen' height='400' />
+<img src = 'assets/app-imgs/Screenshot_20240407_202432_myMUZE.jpg' height='400' />
+</p>
+
+Player Modal:
+<p>
+<img src = 'assets/app-imgs/Screenshot_20240407_202109_myMUZE.jpg' height='400' />
+<img src = 'assets/app-imgs/Screenshot_20240407_202441_myMUZE.jpg' height='400' />
+</p>
+
+User Profile:
+<p>
+<img src = 'assets/app-imgs/Screenshot_20240407_202115_myMUZE.jpg' height='400' />
+<img src = 'assets/app-imgs/Screenshot_20240407_202456_myMUZE.jpg' height='400' />
+</p>
+
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -40,10 +78,6 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
 ## Libraries used
 
 1. react-native track player to play embedded songs in project files to phone speakers
@@ -51,4 +85,5 @@ This is one way to run your app — you can also run it directly from within And
 3. react-native slider to scrub and control music playback
 4. react-native navigation to navigate between different screen throughout the app and stack different screens in order to progress thorugh the app
 5. react-native vector icons to provide icons for music playback control
-6. esling and prettier to unify code for better readiblity
+6. eslint and prettier to unify code for better readiblity
+
